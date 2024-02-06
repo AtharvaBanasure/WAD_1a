@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .profile-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #f44336;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Welcome</h1>
+        <h4>
+            <script>
+                document.write(localStorage.getItem("username"))
+            </script>
+        </h4>
+        <p id="welcomeMessage"></p>
+        <p>Your email is: 
+            <script>
+                document.write(localStorage.getItem());
+            </script>
+        </p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     // Assuming the user's name is stored in localStorage after login
+        //     const userName = localStorage.getItem('userName');
+
+        //     if (userName) {
+        //         document.getElementById('welcomeMessage').innerText = `Hello, ${userName}!`;
+        //     }
+        // });
+
+        function logout() {
+            // Clear user data on logout (you may want to clear more data based on your implementation)
+            localStorage.removeItem('username');
+            localStorage.removeItem('email');
+
+            // Redirect to the login page (replace with your actual login page)
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
